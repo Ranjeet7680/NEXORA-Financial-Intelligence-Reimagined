@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { 
   Layers, ArrowRight, CheckCircle2, 
-  Code2, Rocket, Zap, Shield, Bot, LineChart
+  Code2, Rocket, Zap, Shield, Bot, LineChart,
+  Users, HeartPulse, Compass, UserCheck, ExternalLink, Globe
 } from 'lucide-react';
 import { PROJECTS, ROADMAP_STAGES } from '../data/nexoraData';
 import Card3D from '../components/Card3D';
@@ -20,15 +21,15 @@ export default function ProjectsPage({ onSelectProject, setActiveTab }) {
       <div className="text-center space-y-4 max-w-3xl mx-auto pt-4">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 border border-sky-200 text-sky-700 text-xs font-mono font-bold">
           <Layers className="w-4 h-4 text-sky-600" />
-          <span>NEXORA R&D PRODUCT LABS</span>
+          <span>NEXORA R&D LABS & LIVE AI ECOSYSTEM</span>
         </div>
 
         <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 font-['Hanken_Grotesk'] leading-tight">
           Building the Future of <br />
-          <span className="gradient-text-sky-indigo">Financial Intelligence.</span>
+          <span className="gradient-text-sky-indigo">Financial & Decision Intelligence.</span>
         </h1>
         <p className="text-slate-600 text-base leading-relaxed">
-          Explore the products, experiments, and AI systems being developed by the Nexora engineering team.
+          Explore the core AI platforms, live decision intelligence deployments, and flagship products engineered by Ranjeet and the team.
         </p>
       </div>
 
@@ -36,16 +37,17 @@ export default function ProjectsPage({ onSelectProject, setActiveTab }) {
       <div className="glass-panel p-8 rounded-2xl border border-slate-200 space-y-8 shadow-sm">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-slate-100 pb-4">
           <div>
-            <h3 className="text-lg font-bold text-slate-900 font-['Hanken_Grotesk']">Project Development Lifecycle</h3>
-            <p className="text-xs text-slate-500 font-mono">Standard R&D Advancement Stages</p>
+            <h3 className="text-lg font-bold text-slate-900 font-['Hanken_Grotesk']">Project Development Lifecycle & Production Track</h3>
+            <p className="text-xs text-slate-500 font-mono">Standard R&D Advancement Stages (IDEA ➔ PRODUCTION LIVE)</p>
           </div>
-          <span className="text-xs font-mono text-sky-700 font-bold">6 Stage Pipeline</span>
+          <span className="text-xs font-mono text-sky-700 font-bold">{PROJECTS.length} Ecosystem Applications</span>
         </div>
 
         {/* Horizontal Node Track */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 relative">
           {ROADMAP_STAGES.map((stage, idx) => {
             const isStageActive = PROJECTS.some(p => p.roadmapPhase === stage);
+            const stageCount = PROJECTS.filter(p => p.roadmapPhase === stage).length;
             return (
               <button
                 key={stage}
@@ -65,7 +67,9 @@ export default function ProjectsPage({ onSelectProject, setActiveTab }) {
                 </div>
                 <span className="text-xs font-bold font-mono">{stage}</span>
                 {isStageActive && (
-                  <span className="text-[9px] px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800 font-bold">Active</span>
+                  <span className="text-[9px] px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800 font-bold">
+                    {stageCount} Active
+                  </span>
                 )}
               </button>
             );
@@ -84,10 +88,14 @@ export default function ProjectsPage({ onSelectProject, setActiveTab }) {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-xl bg-sky-50 border border-sky-200 flex items-center justify-center text-sky-600 group-hover:scale-105 transition-transform">
-                    {project.id === 'proj-01' && <Zap className="w-6 h-6" />}
+                    {project.id === 'proj-01' && <Zap className="w-6 h-6 text-sky-600" />}
                     {project.id === 'proj-02' && <Bot className="w-6 h-6 text-sky-600" />}
                     {project.id === 'proj-03' && <Shield className="w-6 h-6 text-red-500" />}
                     {project.id === 'proj-04' && <LineChart className="w-6 h-6 text-indigo-600" />}
+                    {project.id === 'proj-05' && <Users className="w-6 h-6 text-emerald-600" />}
+                    {project.id === 'proj-06' && <HeartPulse className="w-6 h-6 text-rose-600" />}
+                    {project.id === 'proj-07' && <Compass className="w-6 h-6 text-amber-600" />}
+                    {project.id === 'proj-08' && <UserCheck className="w-6 h-6 text-cyan-600" />}
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 font-['Hanken_Grotesk'] group-hover:text-sky-700 transition-colors">
@@ -143,13 +151,17 @@ export default function ProjectsPage({ onSelectProject, setActiveTab }) {
 
                 <button
                   onClick={() => {
-                    const targetTab = project.demoUrl.replace('/', '');
-                    setActiveTab(targetTab);
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    if (project.demoUrl.startsWith('http')) {
+                      window.open(project.demoUrl, '_blank', 'noopener,noreferrer');
+                    } else {
+                      const targetTab = project.demoUrl.replace('/', '');
+                      setActiveTab(targetTab);
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
                   }}
                   className="px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow-md transition-all flex items-center gap-1.5"
                 >
-                  Live Demo <ArrowRight className="w-3.5 h-3.5" />
+                  Live Demo {project.demoUrl.startsWith('http') ? <ExternalLink className="w-3.5 h-3.5 text-sky-400" /> : <ArrowRight className="w-3.5 h-3.5" />}
                 </button>
               </div>
             </div>
@@ -161,3 +173,4 @@ export default function ProjectsPage({ onSelectProject, setActiveTab }) {
     </div>
   );
 }
+

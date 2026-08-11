@@ -183,22 +183,21 @@ export default function HomePage({ setActiveTab, openDemoModal }) {
           {PLATFORM_CARDS.map((card) => (
             <Card3D 
               key={card.id}
-              className="p-6 cursor-pointer flex flex-col justify-between group space-y-6"
+              className="p-8 cursor-pointer flex flex-col justify-between group space-y-6"
+              onClick={() => {
+                const targetTab = card.id === 'voice-system' ? 'copilot' : card.id === 'data-layer' ? 'analytics' : card.id;
+                setActiveTab(targetTab);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
             >
-              <div 
-                onClick={() => {
-                  setActiveTab(card.id === 'copilot' ? 'copilot' : card.id === 'risk' ? 'risk' : card.id === 'forecasting' ? 'forecasting' : 'platform');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-                className="space-y-4"
-              >
+              <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <div className="w-12 h-12 rounded-xl bg-sky-50 border border-sky-200 flex items-center justify-center text-sky-600 group-hover:scale-110 transition-transform">
                     {card.id === 'copilot' && <Bot className="w-6 h-6" />}
                     {card.id === 'analytics' && <TrendingUp className="w-6 h-6" />}
                     {card.id === 'risk' && <ShieldAlert className="w-6 h-6 text-red-500" />}
                     {card.id === 'forecasting' && <LineChart className="w-6 h-6 text-indigo-600" />}
-                    {card.id === 'reports' && <Cpu className="w-6 h-6 text-emerald-600" />}
+                    {card.id === 'voice-system' && <Mic className="w-6 h-6 text-emerald-600 animate-pulse" />}
                     {card.id === 'data-layer' && <Database className="w-6 h-6 text-amber-600" />}
                   </div>
                   <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
@@ -236,7 +235,7 @@ export default function HomePage({ setActiveTab, openDemoModal }) {
             onClick={() => { setActiveTab('projects'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
             className="text-xs font-bold font-mono text-sky-700 hover:underline flex items-center gap-1"
           >
-            View All 4 Active Projects <ArrowRight className="w-4 h-4" />
+            View All {PROJECTS.length} Active Projects <ArrowRight className="w-4 h-4" />
           </button>
         </div>
 
@@ -297,9 +296,25 @@ export default function HomePage({ setActiveTab, openDemoModal }) {
           {TEAM_MEMBERS.map((dev) => (
             <Card3D key={dev.id} className="p-8 text-center space-y-5">
               
-              {/* 3D Gradient Avatar Badge */}
-              <div className={`w-24 h-24 mx-auto rounded-3xl bg-gradient-to-tr ${dev.color} text-white font-extrabold text-2xl flex items-center justify-center shadow-xl shadow-sky-500/20 tracking-wider font-['Hanken_Grotesk']`}>
-                {dev.initials}
+              {/* Avatar Badge / Image */}
+              <div className="relative w-24 h-24 mx-auto group-hover:scale-105 transition-transform duration-300">
+                {dev.avatar ? (
+                  <img 
+                    src={dev.avatar} 
+                    alt={dev.name} 
+                    className="w-24 h-24 rounded-3xl object-cover shadow-xl border-2 border-white/80 ring-2 ring-sky-500/20 shadow-sky-500/10"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
+                  />
+                ) : null}
+                <div 
+                  style={{ display: dev.avatar ? 'none' : 'flex' }}
+                  className={`w-24 h-24 rounded-3xl bg-gradient-to-tr ${dev.color} text-white font-extrabold text-2xl items-center justify-center shadow-xl shadow-sky-500/20 tracking-wider font-['Hanken_Grotesk']`}
+                >
+                  {dev.initials}
+                </div>
               </div>
 
               <div>
@@ -317,10 +332,16 @@ export default function HomePage({ setActiveTab, openDemoModal }) {
                 ))}
               </div>
 
-              <div className="pt-4 border-t border-slate-100 flex justify-center gap-4 text-xs font-mono font-bold">
+              <div className="pt-4 border-t border-slate-100 flex flex-wrap justify-center gap-3 text-xs font-mono font-bold">
                 <a href={dev.linkedin} target="_blank" rel="noreferrer" className="text-slate-600 hover:text-sky-700">LinkedIn</a>
                 <span className="text-slate-300">•</span>
                 <a href={dev.github} target="_blank" rel="noreferrer" className="text-slate-600 hover:text-sky-700">GitHub</a>
+                {dev.hack2skill && (
+                  <>
+                    <span className="text-slate-300">•</span>
+                    <a href={dev.hack2skill} target="_blank" rel="noreferrer" className="text-sky-600 hover:text-sky-800">Hack2Skill</a>
+                  </>
+                )}
               </div>
             </Card3D>
           ))}

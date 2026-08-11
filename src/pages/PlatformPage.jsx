@@ -1,6 +1,6 @@
 import React from 'react';
 import { 
-  Bot, TrendingUp, ShieldAlert, LineChart, FileText, Database, 
+  Bot, TrendingUp, ShieldAlert, LineChart, Mic, Database, 
   ArrowRight, CheckCircle2, Cpu, Zap, Layers, Lock
 } from 'lucide-react';
 import { PLATFORM_CARDS } from '../data/nexoraData';
@@ -24,7 +24,7 @@ export default function PlatformPage({ setActiveTab, openDemoModal }) {
         </p>
       </div>
 
-      {/* Capabilities Grid */}
+      {/* Grid of Platform Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {PLATFORM_CARDS.map((card) => (
           <Card3D 
@@ -33,11 +33,8 @@ export default function PlatformPage({ setActiveTab, openDemoModal }) {
           >
             <div 
               onClick={() => {
-                if (card.id === 'copilot') setActiveTab('copilot');
-                else if (card.id === 'risk') setActiveTab('risk');
-                else if (card.id === 'forecasting') setActiveTab('forecasting');
-                else if (card.id === 'analytics') setActiveTab('analytics');
-                else setActiveTab('reports');
+                const targetTab = card.id === 'voice-system' ? 'copilot' : card.id === 'data-layer' ? 'analytics' : card.id;
+                setActiveTab(targetTab);
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
               className="space-y-4"
@@ -48,7 +45,7 @@ export default function PlatformPage({ setActiveTab, openDemoModal }) {
                   {card.id === 'analytics' && <TrendingUp className="w-7 h-7" />}
                   {card.id === 'risk' && <ShieldAlert className="w-7 h-7 text-red-500" />}
                   {card.id === 'forecasting' && <LineChart className="w-7 h-7 text-indigo-600" />}
-                  {card.id === 'reports' && <FileText className="w-7 h-7 text-emerald-600" />}
+                  {card.id === 'voice-system' && <Mic className="w-7 h-7 text-emerald-600 animate-pulse" />}
                   {card.id === 'data-layer' && <Database className="w-7 h-7 text-amber-600" />}
                 </div>
                 <span className="text-[10px] font-mono font-bold px-3 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
@@ -67,11 +64,8 @@ export default function PlatformPage({ setActiveTab, openDemoModal }) {
             <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
               <button
                 onClick={() => {
-                  if (card.id === 'copilot') setActiveTab('copilot');
-                  else if (card.id === 'risk') setActiveTab('risk');
-                  else if (card.id === 'forecasting') setActiveTab('forecasting');
-                  else if (card.id === 'analytics') setActiveTab('analytics');
-                  else setActiveTab('reports');
+                  const targetTab = card.id === 'voice-system' ? 'copilot' : card.id === 'data-layer' ? 'analytics' : card.id;
+                  setActiveTab(targetTab);
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
                 className="text-xs font-bold font-mono text-sky-700 hover:text-sky-800 flex items-center gap-1.5"

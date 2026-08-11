@@ -102,11 +102,15 @@ export default function ProjectDetailModal({ project, isOpen, onClose, onNavigat
             <button
               onClick={() => {
                 onClose();
-                onNavigateToDemo(project.demoUrl.replace('/', ''));
+                if (project.demoUrl.startsWith('http')) {
+                  window.open(project.demoUrl, '_blank', 'noopener,noreferrer');
+                } else {
+                  onNavigateToDemo(project.demoUrl.replace('/', ''));
+                }
               }}
               className="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow-md transition-all flex items-center gap-2"
             >
-              Launch Live Module Demo <ArrowRight className="w-4 h-4 text-sky-400" />
+              Launch Live Demo {project.demoUrl.startsWith('http') ? <ExternalLink className="w-4 h-4 text-sky-400" /> : <ArrowRight className="w-4 h-4 text-sky-400" />}
             </button>
           </div>
         </div>

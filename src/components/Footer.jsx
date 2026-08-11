@@ -99,8 +99,8 @@ export default function Footer({ setActiveTab, openDemoModal }) {
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('reports')} className="hover:text-white transition-colors">
-                  Smart Reports
+                <button onClick={() => handleNav('copilot')} className="hover:text-white transition-colors flex items-center gap-1.5 text-sky-400">
+                  AI Voice Copilot <span className="text-[9px] px-1 py-0.2 rounded bg-emerald-500/20 text-emerald-400 font-bold font-mono">VOICE</span>
                 </button>
               </li>
             </ul>

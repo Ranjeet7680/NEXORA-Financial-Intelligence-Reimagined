@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles, Menu, X, ArrowRight, ChevronDown, Bot, BarChart2, ShieldAlert, TrendingUp, FileText, Building2, Users, Briefcase, Mail, Layers, Calendar, Cpu, Shield, Globe } from 'lucide-react';
+import { Sparkles, Menu, X, ArrowRight, ChevronDown, Bot, BarChart2, ShieldAlert, TrendingUp, Mic, Building2, Users, Briefcase, Mail, Layers, Calendar, Cpu, Shield, Globe, Volume2 } from 'lucide-react';
 
 export default function Navbar({ activeTab, setActiveTab, openDemoModal }) {
   const [scrolled, setScrolled] = useState(false);
@@ -16,11 +16,10 @@ export default function Navbar({ activeTab, setActiveTab, openDemoModal }) {
 
   const CATEGORIZED_MENU = {
     Platform: [
-      { id: 'copilot', label: 'AI Copilot', badge: 'AI', icon: Bot, desc: 'Conversational financial RAG assistant' },
-      { id: 'analytics', label: 'Analytics', icon: BarChart2, desc: 'Real-time revenue & expense breakdown' },
+      { id: 'copilot', label: 'AI Voice Copilot', badge: 'Voice AI', icon: Mic, desc: 'Voice recognition & Speech Synthesis financial copilot' },
+      { id: 'analytics', label: 'Financial Analytics', icon: BarChart2, desc: 'Real-time revenue & expense breakdown' },
       { id: 'risk', label: 'Risk Intelligence', icon: ShieldAlert, desc: 'Anomaly detection & market stress testing' },
       { id: 'forecasting', label: 'Predictive Forecasting', icon: TrendingUp, desc: 'P10/P50/P90 Monte Carlo probability models' },
-      { id: 'reports', label: 'Smart Reports', icon: FileText, desc: 'Executive board decks & P&L summaries' },
     ],
     Company: [
       { id: 'about', label: 'About Nexora', icon: Building2, desc: 'Mission, vision & Genesis story' },
@@ -55,9 +54,9 @@ export default function Navbar({ activeTab, setActiveTab, openDemoModal }) {
         {/* Company Official Logo & Brand Name */}
         <div 
           onClick={() => handleNavClick('home')}
-          className="flex items-center gap-3 cursor-pointer group select-none shrink-0"
+          className="flex items-center gap-2.5 sm:gap-3 cursor-pointer group select-none shrink-0"
         >
-          <div className="w-10 h-10 rounded-xl overflow-hidden bg-white border border-slate-200 p-0.5 shadow-md shadow-sky-500/10 group-hover:scale-105 transition-transform flex items-center justify-center">
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden bg-white border border-slate-200 p-0.5 shadow-md shadow-sky-500/10 group-hover:scale-105 transition-transform flex items-center justify-center">
             <img 
               src="/nexora-logo.jpg" 
               alt="Nexora Official Logo" 
@@ -66,10 +65,10 @@ export default function Navbar({ activeTab, setActiveTab, openDemoModal }) {
           </div>
 
           <div className="flex flex-col">
-            <span className="font-extrabold text-xl tracking-wider text-slate-900 flex items-center gap-1.5 font-['Hanken_Grotesk'] leading-none">
+            <span className="font-extrabold text-lg sm:text-xl tracking-wider text-slate-900 flex items-center gap-1.5 font-['Hanken_Grotesk'] leading-none">
               NEXORA
-              <span className="text-[10px] px-1.5 py-0.2 rounded bg-sky-100 text-sky-800 font-mono border border-sky-200 font-bold">
-                AI
+              <span className="text-[9px] px-1.5 py-0.2 rounded bg-sky-100 text-sky-800 font-mono border border-sky-200 font-bold flex items-center gap-1">
+                <Mic className="w-2.5 h-2.5 text-sky-600 animate-pulse" /> AI
               </span>
             </span>
             <span className="text-[8px] sm:text-[9px] text-slate-500 tracking-[0.16em] uppercase font-bold mt-1">
@@ -137,7 +136,7 @@ export default function Navbar({ activeTab, setActiveTab, openDemoModal }) {
                               {item.label}
                               {item.badge && (
                                 <span className={`text-[9px] px-1.5 py-0.2 rounded font-mono font-bold ${
-                                  item.badge === 'AI' ? 'bg-sky-100 text-sky-800 border border-sky-200' : 'bg-emerald-100 text-emerald-800 border border-emerald-200'
+                                  item.badge === 'Voice AI' ? 'bg-emerald-100 text-emerald-800 border border-emerald-200' : 'bg-sky-100 text-sky-800 border border-sky-200'
                                 }`}>
                                   {item.badge}
                                 </span>
@@ -155,11 +154,19 @@ export default function Navbar({ activeTab, setActiveTab, openDemoModal }) {
           })}
         </nav>
 
-        {/* Action Button: Request Demo */}
-        <div className="hidden sm:flex items-center gap-3">
+        {/* Action Button: Request Demo & AI Voice Quick Launch */}
+        <div className="hidden sm:flex items-center gap-2">
+          <button 
+            onClick={() => handleNavClick('copilot')}
+            className="px-3.5 py-2.5 rounded-xl bg-sky-50 hover:bg-sky-100 border border-sky-200 text-sky-800 font-mono text-xs font-bold transition-all flex items-center gap-1.5 shadow-xs"
+          >
+            <Mic className="w-3.5 h-3.5 text-sky-600 animate-pulse" />
+            <span>AI Voice Copilot</span>
+          </button>
+
           <button 
             onClick={openDemoModal}
-            className="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow-md shadow-slate-900/10 hover:shadow-slate-900/20 transition-all flex items-center gap-2"
+            className="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow-md shadow-slate-900/10 transition-all flex items-center gap-2"
           >
             Request Demo
             <ArrowRight className="w-3.5 h-3.5 text-sky-400" />
@@ -170,30 +177,51 @@ export default function Navbar({ activeTab, setActiveTab, openDemoModal }) {
         <button 
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle Navigation Menu"
-          className="lg:hidden p-2.5 rounded-xl bg-slate-100 text-slate-800 hover:bg-slate-200 border border-slate-200 transition-colors"
+          className="lg:hidden p-2 rounded-xl bg-slate-100 text-slate-800 hover:bg-slate-200 border border-slate-200 transition-colors"
         >
           {mobileMenuOpen ? <X className="w-6 h-6 text-slate-900" /> : <Menu className="w-6 h-6 text-slate-900" />}
         </button>
       </div>
 
-      {/* Enhanced Mobile Drawer Menu (Structured Categories) */}
+      {/* Ultra Sleek Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-[65px] bottom-0 bg-white/98 backdrop-blur-2xl border-b border-slate-200 p-5 overflow-y-auto space-y-6 z-50 animate-fadeIn">
+        <div className="lg:hidden fixed inset-x-0 top-[60px] sm:top-[65px] bottom-0 bg-white/98 backdrop-blur-2xl border-b border-slate-200 p-4 sm:p-6 overflow-y-auto space-y-5 z-50 animate-fadeIn shadow-2xl">
           
+          {/* Quick Voice Assistant Launcher Card inside Mobile Drawer */}
+          <div 
+            onClick={() => handleNavClick('copilot')}
+            className="p-4 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-800 to-sky-950 text-white border border-sky-500/30 flex items-center justify-between cursor-pointer shadow-lg group"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-sky-500/20 border border-sky-400/40 flex items-center justify-center text-sky-400 group-hover:scale-110 transition-transform">
+                <Mic className="w-5 h-5 animate-pulse" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2 font-bold text-xs font-['Hanken_Grotesk'] text-white">
+                  <span>AI Voice Copilot System</span>
+                  <span className="text-[8px] px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono font-bold">READY</span>
+                </div>
+                <p className="text-[10px] text-sky-200/80 font-mono">Tap to speak or listen to real-time AI financial answers</p>
+              </div>
+            </div>
+            <ArrowRight className="w-4 h-4 text-sky-400 group-hover:translate-x-1 transition-transform shrink-0" />
+          </div>
+
           <button
             onClick={() => handleNavClick('home')}
-            className={`w-full p-3 rounded-xl text-left font-bold text-sm flex items-center justify-between ${
-              activeTab === 'home' ? 'bg-sky-50 text-sky-700 border border-sky-200' : 'bg-slate-50 text-slate-800'
+            className={`w-full p-3 rounded-xl text-left font-bold text-xs sm:text-sm flex items-center justify-between transition-all ${
+              activeTab === 'home' ? 'bg-sky-50 text-sky-700 border border-sky-200 shadow-xs' : 'bg-slate-50 text-slate-800 border border-slate-100'
             }`}
           >
-            <span>🏠 Home</span>
+            <span className="flex items-center gap-2">🏠 Main Home Dashboard</span>
             <ArrowRight className="w-4 h-4 text-slate-400" />
           </button>
 
           {Object.keys(CATEGORIZED_MENU).map((catKey) => (
             <div key={catKey} className="space-y-2">
-              <div className="text-[11px] font-mono font-extrabold uppercase tracking-widest text-sky-700 px-1 border-b border-slate-200 pb-1">
-                {catKey}
+              <div className="text-[10px] font-mono font-extrabold uppercase tracking-widest text-sky-700 px-1 border-b border-slate-200 pb-1 flex items-center justify-between">
+                <span>{catKey}</span>
+                <span className="text-[9px] text-slate-400 font-normal">{CATEGORIZED_MENU[catKey].length} pages</span>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
@@ -216,16 +244,19 @@ export default function Navbar({ activeTab, setActiveTab, openDemoModal }) {
                         <Icon className="w-4 h-4" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-1.5 text-xs font-bold font-['Hanken_Grotesk'] truncate">
-                          {item.label}
+                        <div className="flex items-center justify-between gap-1">
+                          <span className="text-xs font-bold font-['Hanken_Grotesk'] truncate text-slate-900">
+                            {item.label}
+                          </span>
                           {item.badge && (
-                            <span className={`text-[9px] px-1.5 py-0.2 rounded font-mono font-bold ${
-                              item.badge === 'AI' ? 'bg-sky-100 text-sky-800' : 'bg-emerald-100 text-emerald-800'
+                            <span className={`text-[8px] px-1.5 py-0.2 rounded font-mono font-bold shrink-0 ${
+                              item.badge === 'Voice AI' ? 'bg-emerald-100 text-emerald-800' : 'bg-sky-100 text-sky-800'
                             }`}>
                               {item.badge}
                             </span>
                           )}
                         </div>
+                        <p className="text-[10px] text-slate-500 line-clamp-1 mt-0.5">{item.desc}</p>
                       </div>
                     </button>
                   );
@@ -235,10 +266,10 @@ export default function Navbar({ activeTab, setActiveTab, openDemoModal }) {
           ))}
 
           {/* Action Button inside Drawer */}
-          <div className="pt-4 border-t border-slate-200">
+          <div className="pt-3 border-t border-slate-200">
             <button 
               onClick={() => { setMobileMenuOpen(false); openDemoModal(); }}
-              className="w-full py-3.5 rounded-xl bg-slate-900 text-white font-bold text-xs shadow-lg flex items-center justify-center gap-2"
+              className="w-full py-3.5 rounded-xl bg-slate-900 text-white font-bold text-xs shadow-lg flex items-center justify-center gap-2 active:scale-98 transition-transform"
             >
               Request Demo <ArrowRight className="w-4 h-4 text-sky-400" />
             </button>

@@ -58,7 +58,7 @@ export default function AboutPage({ openDemoModal }) {
         <h2 className="text-3xl font-extrabold font-['Hanken_Grotesk']">Our Story</h2>
         <div className="space-y-4 text-slate-300 text-sm leading-relaxed max-w-3xl">
           <p>
-            Nexora was founded by Ranjeet Kumar, Abhishek Kantharia, and Santosh Kumar after realizing that legacy financial tools were failing modern venture-backed startups and institutions.
+            Nexora was founded by Ranjeet Kumar, Abhishek Kantharia, and GLS Santhosh after realizing that legacy financial tools were failing modern venture-backed startups and institutions.
           </p>
           <p>
             Finance teams were trapped spending 80% of their time aggregating CSV files and formatting deck slides, rather than running high-conviction risk analysis or scenario planning.

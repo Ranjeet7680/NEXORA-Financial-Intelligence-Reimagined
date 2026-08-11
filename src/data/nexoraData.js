@@ -2,7 +2,7 @@
 
 export const STATS = [
   { label: "AI Modules", value: "10+", suffix: "Production Engines", change: "+4 updated in 2026" },
-  { label: "Core Developers", value: "3", suffix: "Engineering Lead Team", change: "Ranjeet, Abhishek, Santosh" },
+  { label: "Core Developers", value: "3", suffix: "Engineering Lead Team", change: "Ranjeet, Abhishek, GLS Santhosh" },
   { label: "Planned Features", value: "20+", suffix: "Product Roadmap", change: "9 in Active Dev" },
   { label: "Possibilities", value: "∞", suffix: "Neural Financial Intelligence", change: "Real-time Autonomous" }
 ];
@@ -41,12 +41,12 @@ export const PLATFORM_CARDS = [
     desc: "Forecast revenue, expenses, and cash flow across multiple macro scenarios with neural confidence bands and Bayesian inference."
   },
   {
-    id: "reports",
-    title: "Smart Reports",
-    icon: "FileText",
+    id: "voice-system",
+    title: "AI Voice Intelligence",
+    icon: "Mic",
     color: "emerald",
-    badge: "Executive Ready",
-    desc: "Generate board-ready financial decks, SEC/regulatory compliance reports, and departmental P&L summaries in seconds."
+    badge: "Voice System AI",
+    desc: "Hands-free natural language voice recognition and Speech Synthesis readout for real-time financial auditing on mobile & desktop."
   },
   {
     id: "data-layer",
@@ -69,9 +69,9 @@ export const PROJECTS = [
     statusIcon: "CheckCircle2",
     description: "Core platform for AI-powered financial analytics, forecasting, and risk intelligence built for institutional datasets.",
     technology: ["Python", "FastAPI", "React", "TypeScript", "Google Cloud", "BigQuery"],
-    team: ["Ranjeet Kumar", "Abhishek Kantharia", "Santosh Kumar"],
+    team: ["Ranjeet Kumar", "Abhishek Kantharia", "GLS Santhosh"],
     github: "https://github.com/Ranjeet7680/nexora-financial-intelligence",
-    demoUrl: "/reports",
+    demoUrl: "/copilot",
     roadmapPhase: "MVP",
     version: "v0.9.4 Beta"
   },
@@ -85,7 +85,7 @@ export const PROJECTS = [
     statusIcon: "Zap",
     description: "Conversational AI assistant fine-tuned on financial data, GAAP rules, and business metrics for natural language decision support.",
     technology: ["LLMs", "RAG Engine", "FastAPI", "VectorDB", "LangChain", "React"],
-    team: ["Ranjeet Kumar", "Santosh Kumar"],
+    team: ["Ranjeet Kumar", "GLS Santhosh"],
     github: "https://github.com/Ranjeet7680/nexora-ai-copilot",
     demoUrl: "/copilot",
     roadmapPhase: "PROTOTYPE",
@@ -101,7 +101,7 @@ export const PROJECTS = [
     statusIcon: "Shield",
     description: "AI-powered anomaly detection system trained to identify unusual expenditure spikes, liquidity stress, and audit discrepancies.",
     technology: ["PyTorch", "Scikit-Learn", "Python", "Kafka", "PostgreSQL"],
-    team: ["Santosh Kumar", "Ranjeet Kumar"],
+    team: ["GLS Santhosh", "Ranjeet Kumar"],
     github: "https://github.com/Ranjeet7680/nexora-risk-engine",
     demoUrl: "/risk",
     roadmapPhase: "RESEARCH",
@@ -122,6 +122,70 @@ export const PROJECTS = [
     demoUrl: "/forecasting",
     roadmapPhase: "IDEA",
     version: "v0.1.0 Design"
+  },
+  {
+    id: "proj-05",
+    name: "CommunityPulse AI",
+    subtitle: "Decision Intelligence & Civic Insights Platform",
+    tags: ["Decision Intelligence", "Civic AI", "Sentiment Analysis", "Public Policy"],
+    status: "Production Live",
+    statusColor: "emerald",
+    statusIcon: "Users",
+    description: "Enterprise AI decision intelligence platform designed for civic, community, and organizational sentiment analysis, dynamic feedback mapping, and policy impact prediction.",
+    technology: ["React", "Python", "Vite", "FastAPI", "NLP Transformers", "Vercel"],
+    team: ["Ranjeet Kumar"],
+    github: "https://github.com/Ranjeet7680/CommunityPulse-AI-Decision-Intelligence-Platform.git",
+    demoUrl: "https://communitypulse-static-prototype.vercel.app/",
+    roadmapPhase: "PRODUCTION",
+    version: "v1.2.0 Live"
+  },
+  {
+    id: "proj-06",
+    name: "FinanceFit AI",
+    subtitle: "AI Financial Health & Fitness Engine",
+    tags: ["FinTech", "Personal Finance", "Fitness Score", "Smart Budgeting"],
+    status: "Production Live",
+    statusColor: "emerald",
+    statusIcon: "HeartPulse",
+    description: "Next-generation AI financial health and fitness system that audits cash flows, calculates real-time financial wellness scores, and automates personal and business wealth building.",
+    technology: ["React", "TypeScript", "Tailwind CSS", "Financial Scoring AI", "Vercel"],
+    team: ["Ranjeet Kumar"],
+    github: "https://github.com/Ranjeet7680/FinanceFit-AI.git",
+    demoUrl: "https://financefit-ai.vercel.app/",
+    roadmapPhase: "PRODUCTION",
+    version: "v1.1.0 Live"
+  },
+  {
+    id: "proj-07",
+    name: "Voyage Analytics",
+    subtitle: "Maritime & Global Supply Chain Decision Platform",
+    tags: ["Maritime AI", "Supply Chain", "Logistics Analytics", "Vessel Tracking"],
+    status: "Production Live",
+    statusColor: "emerald",
+    statusIcon: "Compass",
+    description: "Intelligent maritime analytics platform empowering shippers, ocean carriers, and logistics operators with real-time vessel tracking, ETA prediction, and route optimization.",
+    technology: ["React", "Vite", "Geospatial GIS", "Supply Chain AI", "Chart.js", "Vercel"],
+    team: ["Ranjeet Kumar"],
+    github: "https://github.com/Ranjeet7680/Voyage-Analytics.git",
+    demoUrl: "https://voyage-analytics.vercel.app/",
+    roadmapPhase: "PRODUCTION",
+    version: "v1.0.0 Live"
+  },
+  {
+    id: "proj-08",
+    name: "Recruit-AI (EnterpriseFlow)",
+    subtitle: "Enterprise AI Recruiter & Intelligence System",
+    tags: ["Enterprise HR", "AI Recruiter", "Snowflake", "Talent Intelligence"],
+    status: "Production Live",
+    statusColor: "emerald",
+    statusIcon: "UserCheck",
+    description: "Snowflake Edition enterprise AI recruiter intelligence platform automating candidate sourcing, talent match scoring, and automated candidate evaluation workflows.",
+    technology: ["React", "Snowflake Data Cloud", "Tailwind CSS", "Recruiter AI Engine", "Vercel"],
+    team: ["Ranjeet Kumar"],
+    github: "https://github.com/Ranjeet7680/Recruit-AI-Enterprise-AI-Recruiter-Intelligence-System.git",
+    demoUrl: "https://enterprise-flow-ai-snowflake-editio.vercel.app/",
+    roadmapPhase: "PRODUCTION",
+    version: "v1.3.0 Live"
   }
 ];
 
@@ -192,11 +256,13 @@ export const TEAM_MEMBERS = [
     name: "Ranjeet Kumar",
     role: "Lead Developer & AI Engineer",
     initials: "RK",
+    avatar: null,
     color: "from-sky-500 to-blue-600",
     bio: "Passionate AI Engineer & Full-Stack Architect building neural-grade algorithms for complex financial systems. Expert in LLM agents, Python backend microservices, and modern UI engineering.",
     skills: ["AI/ML", "Full Stack", "Python", "React", "Cloud", "FastAPI", "Deep Learning"],
-    linkedin: "https://linkedin.com/in/ranjeetkumar",
+    linkedin: "https://www.linkedin.com/in/ranjeet-kumar-78a45120b/",
     github: "https://github.com/Ranjeet7680",
+    hack2skill: "https://hack2skill.com/dashboard/user_public_profile/?userId=6817753bbd3f11d6144699e1&tabIndex=about&utm_source=hack2skill&utm_medium=homepage",
     featured: true
   },
   {
@@ -204,23 +270,27 @@ export const TEAM_MEMBERS = [
     name: "Abhishek Kantharia",
     role: "Full-Stack Developer",
     initials: "AK",
+    avatar: "https://media.licdn.com/dms/image/v2/D5603AQG5JiSuzTp-vw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1703775142758?e=1787788800&v=beta&t=VX51tVsvEX-BNgaAx-wIo4rLjSC5dAXpNsldjyTes3U",
     color: "from-indigo-500 to-violet-600",
     bio: "Specialist in scalable web applications, real-time data visualization, and fluid user experiences. Passionate about building enterprise UI systems that make heavy financial data feel effortless.",
     skills: ["React", "Node.js", "Backend", "UI/UX", "TypeScript", "TailwindCSS", "REST/GraphQL"],
-    linkedin: "https://linkedin.com/in/abhishek-kantharia",
-    github: "https://github.com/abhishek-kantharia",
+    linkedin: "https://www.linkedin.com/in/abhishekkantharia1/",
+    github: "https://github.com/AbhishekKantharia",
+    hack2skill: "https://hack2skill.com/dashboard/user_public_profile/?userId=68cda0a54f508360a04d19a3&tabIndex=about&utm_source=hack2skill&utm_medium=homepage",
     featured: true
   },
   {
-    id: "santosh",
-    name: "Santosh Kumar",
+    id: "santhosh",
+    name: "GLS Santhosh",
     role: "AI/ML & Product Developer",
-    initials: "SK",
+    initials: "GS",
+    avatar: "https://media.licdn.com/dms/image/v2/D4D03AQFzus76v0H7vg/profile-displayphoto-crop_800_800/B4DZ99sEXJIYAI-/0/1784520136691?e=1787788800&v=beta&t=2STHXXbTwFYJ8NcIQ5S_2AZMY8y7ysfKKQ2zXeIejis",
     color: "from-emerald-500 to-teal-600",
     bio: "Focuses on machine learning model design, quantitative time-series forecasting, and translating raw data streams into high-impact product features for business intelligence.",
     skills: ["Machine Learning", "AI", "Data", "Product", "Python", "PyTorch", "Predictive Models"],
-    linkedin: "https://linkedin.com/in/santoshkumar",
-    github: "https://github.com/santoshkumar",
+    linkedin: "https://www.linkedin.com/in/santhosh-gls/",
+    github: "https://github.com/glssanthosh1306",
+    hack2skill: "https://hack2skill.com/dashboard/user_public_profile/?userId=6a75dde8d54c393d0f59ce5a&tabIndex=about&utm_source=hack2skill&utm_medium=homepage",
     featured: true
   }
 ];

@@ -23,7 +23,6 @@ import FuturePage from './pages/FuturePage';
 import SolutionsPage from './pages/SolutionsPage';
 import TechnologyPage from './pages/TechnologyPage';
 import SecurityPage from './pages/SecurityPage';
-import ReportsPage from './pages/ReportsPage';
 import ResourcesPage from './pages/ResourcesPage';
 import AboutPage from './pages/AboutPage';
 import TeamPage from './pages/TeamPage';
@@ -113,10 +112,6 @@ export default function App() {
 
         {activeTab === 'security' && (
           <SecurityPage />
-        )}
-
-        {activeTab === 'reports' && (
-          <ReportsPage />
         )}
 
         {activeTab === 'resources' && (
