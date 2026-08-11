@@ -24,17 +24,17 @@ export default function CopilotPage() {
       text: "Synthesizing ERP telemetry, current Q3 actuals, and signed enterprise contracts...",
       data: {
         title: "Projected Net Cash Flow - Q4 2026",
-        val: "₹8.17 Cr",
-        growth: "+9.6% vs Q3",
+        val: "₹0",
+        growth: "0.0% vs Q3",
         breakdown: [
-          { label: "Operating Revenue", amount: "₹24.8 Cr" },
-          { label: "Operating Expenses (OpEx)", amount: "₹16.63 Cr" },
-          { label: "Net Cash Surplus", amount: "₹8.17 Cr" }
+          { label: "Operating Revenue", amount: "₹10,000" },
+          { label: "Operating Expenses (OpEx)", amount: "₹10,000" },
+          { label: "Net Cash Surplus", amount: "₹0" }
         ],
         insights: [
-          "Marketing CAC dropped by 8.2% following AI campaign optimizations.",
-          "Enterprise renewals account for 42% of incoming Q4 cash reserves.",
-          "Solvency risk index remains minimal at 14/100 (Healthy)."
+          "Operating revenue matches total operating expenses resulting in breakeven.",
+          "Net Profit and Free Cash Flow remain at ₹0.",
+          "Solvency risk index evaluated at 45/100 (Medium Risk)."
         ]
       }
     }

@@ -269,15 +269,16 @@ export const TECH_STACK = {
 };
 
 export const DEMO_METRICS = {
-  healthScore: 92,
-  healthStatus: "Healthy",
-  revenue: "₹24.8 Cr",
-  revenueGrowth: "+18.4%",
-  netProfit: "₹6.42 Cr",
-  profitGrowth: "+12.8%",
-  cashFlow: "₹8.17 Cr",
-  cashFlowGrowth: "+9.6%",
-  riskScore: "14 / 100 (Low Risk)",
+  healthScore: 50,
+  healthStatus: "Breakeven",
+  revenue: "₹10,000",
+  revenueGrowth: "0.0%",
+  netProfit: "₹0",
+  profitGrowth: "0.0%",
+  cashFlow: "₹0",
+  cashFlowGrowth: "0.0%",
+  opex: "₹10,000",
+  riskScore: "45 / 100 (Medium Risk)",
   copilotQueriesProcessed: "148,920"
 };
 

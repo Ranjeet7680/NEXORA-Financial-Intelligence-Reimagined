@@ -6,9 +6,9 @@ export default function ForecastingPage() {
   const [scenario, setScenario] = useState('base');
 
   const SCENARIOS = {
-    optimistic: { label: 'Optimistic (P90)', rev: '₹31.2 Cr', cash: '₹11.4 Cr', color: 'emerald' },
-    base: { label: 'Base Case (P50)', rev: '₹24.8 Cr', cash: '₹8.17 Cr', color: 'sky' },
-    conservative: { label: 'Conservative (P10)', rev: '₹19.6 Cr', cash: '₹5.8 Cr', color: 'amber' }
+    optimistic: { label: 'Optimistic (P90)', rev: '₹15,000', cash: '₹5,000', color: 'emerald' },
+    base: { label: 'Base Case (P50)', rev: '₹10,000', cash: '₹0', color: 'sky' },
+    conservative: { label: 'Conservative (P10)', rev: '₹7,500', cash: '-₹2,500', color: 'amber' }
   };
 
   return (

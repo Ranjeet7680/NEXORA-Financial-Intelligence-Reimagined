@@ -7,17 +7,17 @@ export default function AnalyticsPage() {
   const [selectedMetric, setSelectedMetric] = useState('revenue');
 
   const METRICS = [
-    { id: 'revenue', title: 'Total Revenue', val: '₹24.8 Cr', change: '+18.4%', trend: 'up', icon: DollarSign, color: 'sky' },
-    { id: 'profit', title: 'Net Profit', val: '₹6.42 Cr', change: '+12.8%', trend: 'up', icon: TrendingUp, color: 'indigo' },
-    { id: 'cashflow', title: 'Free Cash Flow', val: '₹8.17 Cr', change: '+9.6%', trend: 'up', icon: BarChart3, color: 'emerald' },
-    { id: 'opex', title: 'Operating Expenses', val: '₹16.63 Cr', change: '-3.2%', trend: 'down', icon: PieChart, color: 'amber' },
+    { id: 'revenue', title: 'Total Revenue', val: '₹10,000', change: '0.0%', trend: 'up', icon: DollarSign, color: 'sky' },
+    { id: 'profit', title: 'Net Profit', val: '₹0', change: '0.0%', trend: 'up', icon: TrendingUp, color: 'indigo' },
+    { id: 'cashflow', title: 'Free Cash Flow', val: '₹0', change: '0.0%', trend: 'up', icon: BarChart3, color: 'emerald' },
+    { id: 'opex', title: 'Operating Expenses', val: '₹10,000', change: '0.0%', trend: 'down', icon: PieChart, color: 'amber' },
   ];
 
   const EXPENSE_BREAKDOWN = [
-    { category: 'Research & AI Engineering', amount: '₹6.2 Cr', pct: '37.3%' },
-    { category: 'Infrastructure & Cloud Compute', amount: '₹4.8 Cr', pct: '28.8%' },
-    { category: 'Sales & Customer Acquisition', amount: '₹3.4 Cr', pct: '20.4%' },
-    { category: 'Operations & Compliance', amount: '₹2.23 Cr', pct: '13.5%' },
+    { category: 'Research & AI Engineering', amount: '₹4,000', pct: '40.0%' },
+    { category: 'Infrastructure & Cloud Compute', amount: '₹3,000', pct: '30.0%' },
+    { category: 'Operations & Compliance', amount: '₹2,000', pct: '20.0%' },
+    { category: 'Sales & Customer Acquisition', amount: '₹1,000', pct: '10.0%' },
   ];
 
   return (

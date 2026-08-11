@@ -16,7 +16,7 @@
 - **Zero-Hallucination RAG Engine**: Deterministic SQL calculations executed over raw ledger events before RAG translates metrics into natural English.
 
 ### 2. 📊 Financial Analytics & OpEx Breakdown
-- Real-time breakdown of **Revenue (₹24.8 Cr +18.4%)**, **Net Profit (₹6.42 Cr +12.8%)**, **Cash Flow (₹8.17 Cr +9.6%)**, and **Operating Expenses (₹16.63 Cr -3.2%)**.
+- Real-time breakdown of **Revenue (₹10,000)**, **Net Profit (₹0)**, **Free Cash Flow (₹0)**, and **Operating Expenses (₹10,000)**.
 - Period selectors (Q1 - Q4 2026) and granular departmental OpEx allocation analysis.
 
 ### 3. 🛡️ Risk Intelligence & Market Stress Simulator
