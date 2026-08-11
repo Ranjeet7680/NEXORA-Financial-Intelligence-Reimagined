@@ -36,6 +36,17 @@ export default function Navbar({ activeTab, setActiveTab, openDemoModal }) {
     ]
   };
 
+  React.useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
   const handleNavClick = (id) => {
     setActiveTab(id);
     setMobileMenuOpen(false);
@@ -47,7 +58,7 @@ export default function Navbar({ activeTab, setActiveTab, openDemoModal }) {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled 
         ? 'bg-white/95 backdrop-blur-xl border-b border-slate-200/80 py-2.5 shadow-[0_10px_30px_rgba(15,23,42,0.08)]' 
-        : 'bg-white/80 backdrop-blur-md border-b border-slate-200/50 py-3.5'
+        : 'bg-white/90 backdrop-blur-md border-b border-slate-200/50 py-3'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         
@@ -90,12 +101,12 @@ export default function Navbar({ activeTab, setActiveTab, openDemoModal }) {
           </button>
 
           {Object.keys(CATEGORIZED_MENU).map((catKey) => {
-            const isCatActive = CATEGORIZED_MENU[catKey].some(item => item.id === activeTab);
             const isOpen = activeDropdown === catKey;
-
+            const isCatActive = CATEGORIZED_MENU[catKey].some(item => item.id === activeTab);
+            
             return (
               <div 
-                key={catKey} 
+                key={catKey}
                 className="relative"
                 onMouseEnter={() => setActiveDropdown(catKey)}
                 onMouseLeave={() => setActiveDropdown(null)}
@@ -185,7 +196,7 @@ export default function Navbar({ activeTab, setActiveTab, openDemoModal }) {
 
       {/* Ultra Sleek Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-[60px] sm:top-[65px] bottom-0 bg-white/98 backdrop-blur-2xl border-b border-slate-200 p-4 sm:p-6 overflow-y-auto space-y-5 z-50 animate-fadeIn shadow-2xl">
+        <div className="lg:hidden absolute top-full left-0 right-0 h-[calc(100dvh-100%)] min-h-[calc(100vh-65px)] bg-white border-b border-slate-200 p-4 sm:p-6 overflow-y-auto space-y-5 z-50 shadow-2xl">
           
           {/* Quick Voice Assistant Launcher Card inside Mobile Drawer */}
           <div 
