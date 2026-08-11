@@ -114,28 +114,28 @@ export default function HomePage({ setActiveTab, openDemoModal }) {
               <div className="grid grid-cols-4 gap-2 my-2 text-center font-mono">
                 <div className="p-2 rounded-lg bg-slate-50 border border-slate-100">
                   <span className="text-[9px] text-slate-500 block">Health</span>
-                  <span className="text-xs font-bold text-emerald-600">92 / 100</span>
+                  <span className="text-xs font-bold text-emerald-600">{DEMO_METRICS.healthScore} / 100</span>
                 </div>
                 <div className="p-2 rounded-lg bg-slate-50 border border-slate-100">
                   <span className="text-[9px] text-slate-500 block">Revenue</span>
-                  <span className="text-xs font-bold text-sky-600">₹24.8 Cr</span>
+                  <span className="text-xs font-bold text-sky-600">{DEMO_METRICS.revenue}</span>
                 </div>
                 <div className="p-2 rounded-lg bg-slate-50 border border-slate-100">
                   <span className="text-[9px] text-slate-500 block">Profit</span>
-                  <span className="text-xs font-bold text-indigo-600">₹6.42 Cr</span>
+                  <span className="text-xs font-bold text-indigo-600">{DEMO_METRICS.netProfit}</span>
                 </div>
                 <div className="p-2 rounded-lg bg-slate-50 border border-slate-100">
                   <span className="text-[9px] text-slate-500 block">Cash Flow</span>
-                  <span className="text-xs font-bold text-emerald-600">₹8.17 Cr</span>
+                  <span className="text-xs font-bold text-emerald-600">{DEMO_METRICS.cashFlow}</span>
                 </div>
               </div>
 
               <div className="pt-3 flex items-center justify-between text-xs">
                 <button 
-                  onClick={() => setActiveTab('reports')}
+                  onClick={() => setActiveTab('copilot')}
                   className="text-sky-700 font-mono hover:underline flex items-center gap-1 font-bold"
                 >
-                  Explore Product Intelligence Reports <ArrowUpRight className="w-3.5 h-3.5" />
+                  Explore AI Voice & Copilot Intelligence <ArrowUpRight className="w-3.5 h-3.5" />
                 </button>
                 <span className="text-[10px] text-slate-400 font-mono">BigQuery Engine</span>
               </div>
