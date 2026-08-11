@@ -256,7 +256,7 @@ export const TEAM_MEMBERS = [
     name: "Ranjeet Kumar",
     role: "Lead Developer & AI Engineer",
     initials: "RK",
-    avatar: null,
+    avatar: "https://media.licdn.com/dms/image/v2/D4D03AQHCqZw8_H5yhA/profile-displayphoto-crop_800_800/B4DZ9RIXJ9GkBQ-/0/1783772575136?e=1787788800&v=beta&t=5KhpaqboCkXHT6veUrkiwzbV70tgN4YyOWRJa8Wwn0o",
     color: "from-sky-500 to-blue-600",
     bio: "Passionate AI Engineer & Full-Stack Architect building neural-grade algorithms for complex financial systems. Expert in LLM agents, Python backend microservices, and modern UI engineering.",
     skills: ["AI/ML", "Full Stack", "Python", "React", "Cloud", "FastAPI", "Deep Learning"],
