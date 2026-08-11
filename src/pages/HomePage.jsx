@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { 
   Sparkles, ArrowRight, TrendingUp, ShieldAlert, Bot, Database, 
   Layers, CheckCircle2, ChevronRight, Activity, Cpu, Zap, LineChart, 
-  Users, Lock, Play, ArrowUpRight
+  Users, Lock, Play, ArrowUpRight, Mic
 } from 'lucide-react';
 import { STATS, PLATFORM_CARDS, PROJECTS, TEAM_MEMBERS, DEMO_METRICS } from '../data/nexoraData';
 import ThreeCanvas from '../components/ThreeCanvas';
