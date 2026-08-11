@@ -61,70 +61,6 @@ export const PLATFORM_CARDS = [
 export const PROJECTS = [
   {
     id: "proj-01",
-    name: "Nexora Financial Intelligence",
-    subtitle: "Core AI Platform",
-    tags: ["AI", "FinTech", "Analytics"],
-    status: "In Development",
-    statusColor: "emerald",
-    statusIcon: "CheckCircle2",
-    description: "Core platform for AI-powered financial analytics, forecasting, and risk intelligence built for institutional datasets.",
-    technology: ["Python", "FastAPI", "React", "TypeScript", "Google Cloud", "BigQuery"],
-    team: ["Ranjeet Kumar", "Abhishek Kantharia", "GLS Santhosh"],
-    github: "https://github.com/Ranjeet7680/nexora-financial-intelligence",
-    demoUrl: "/copilot",
-    roadmapPhase: "MVP",
-    version: "v0.9.4 Beta"
-  },
-  {
-    id: "proj-02",
-    name: "Nexora AI Copilot",
-    subtitle: "Generative LLM Assistant",
-    tags: ["Generative AI", "LLM", "Finance"],
-    status: "Prototype",
-    statusColor: "amber",
-    statusIcon: "Zap",
-    description: "Conversational AI assistant fine-tuned on financial data, GAAP rules, and business metrics for natural language decision support.",
-    technology: ["LLMs", "RAG Engine", "FastAPI", "VectorDB", "LangChain", "React"],
-    team: ["Ranjeet Kumar", "GLS Santhosh"],
-    github: "https://github.com/Ranjeet7680/nexora-ai-copilot",
-    demoUrl: "/copilot",
-    roadmapPhase: "PROTOTYPE",
-    version: "v0.4.1 Alpha"
-  },
-  {
-    id: "proj-03",
-    name: "Nexora Risk Engine",
-    subtitle: "Machine Learning Detection System",
-    tags: ["Machine Learning", "Risk AI", "Security"],
-    status: "Research",
-    statusColor: "blue",
-    statusIcon: "Shield",
-    description: "AI-powered anomaly detection system trained to identify unusual expenditure spikes, liquidity stress, and audit discrepancies.",
-    technology: ["PyTorch", "Scikit-Learn", "Python", "Kafka", "PostgreSQL"],
-    team: ["GLS Santhosh", "Ranjeet Kumar"],
-    github: "https://github.com/Ranjeet7680/nexora-risk-engine",
-    demoUrl: "/risk",
-    roadmapPhase: "RESEARCH",
-    version: "v0.2.0 Research"
-  },
-  {
-    id: "proj-04",
-    name: "Nexora Forecast",
-    subtitle: "Predictive Time-Series Neural Model",
-    tags: ["Predictive AI", "Time Series", "Monte Carlo"],
-    status: "Planned",
-    statusColor: "purple",
-    statusIcon: "Clock",
-    description: "Intelligent forecasting engine for revenue, cash flow, and business performance using Bayesian neural probability models.",
-    technology: ["Prophet", "TensorFlow", "FastAPI", "Recharts", "D3.js"],
-    team: ["Abhishek Kantharia", "Ranjeet Kumar"],
-    github: "https://github.com/Ranjeet7680/nexora-forecast",
-    demoUrl: "/forecasting",
-    roadmapPhase: "IDEA",
-    version: "v0.1.0 Design"
-  },
-  {
-    id: "proj-05",
     name: "CommunityPulse AI",
     subtitle: "Decision Intelligence & Civic Insights Platform",
     tags: ["Decision Intelligence", "Civic AI", "Sentiment Analysis", "Public Policy"],
@@ -140,7 +76,7 @@ export const PROJECTS = [
     version: "v1.2.0 Live"
   },
   {
-    id: "proj-06",
+    id: "proj-02",
     name: "FinanceFit AI",
     subtitle: "AI Financial Health & Fitness Engine",
     tags: ["FinTech", "Personal Finance", "Fitness Score", "Smart Budgeting"],
@@ -156,7 +92,7 @@ export const PROJECTS = [
     version: "v1.1.0 Live"
   },
   {
-    id: "proj-07",
+    id: "proj-03",
     name: "Voyage Analytics",
     subtitle: "Maritime & Global Supply Chain Decision Platform",
     tags: ["Maritime AI", "Supply Chain", "Logistics Analytics", "Vessel Tracking"],
@@ -172,7 +108,7 @@ export const PROJECTS = [
     version: "v1.0.0 Live"
   },
   {
-    id: "proj-08",
+    id: "proj-04",
     name: "Recruit-AI (EnterpriseFlow)",
     subtitle: "Enterprise AI Recruiter & Intelligence System",
     tags: ["Enterprise HR", "AI Recruiter", "Snowflake", "Talent Intelligence"],

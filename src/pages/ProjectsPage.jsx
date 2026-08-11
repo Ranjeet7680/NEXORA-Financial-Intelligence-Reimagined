@@ -88,14 +88,10 @@ export default function ProjectsPage({ onSelectProject, setActiveTab }) {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-xl bg-sky-50 border border-sky-200 flex items-center justify-center text-sky-600 group-hover:scale-105 transition-transform">
-                    {project.id === 'proj-01' && <Zap className="w-6 h-6 text-sky-600" />}
-                    {project.id === 'proj-02' && <Bot className="w-6 h-6 text-sky-600" />}
-                    {project.id === 'proj-03' && <Shield className="w-6 h-6 text-red-500" />}
-                    {project.id === 'proj-04' && <LineChart className="w-6 h-6 text-indigo-600" />}
-                    {project.id === 'proj-05' && <Users className="w-6 h-6 text-emerald-600" />}
-                    {project.id === 'proj-06' && <HeartPulse className="w-6 h-6 text-rose-600" />}
-                    {project.id === 'proj-07' && <Compass className="w-6 h-6 text-amber-600" />}
-                    {project.id === 'proj-08' && <UserCheck className="w-6 h-6 text-cyan-600" />}
+                    {(project.id === 'proj-01' || project.name.includes('CommunityPulse')) && <Users className="w-6 h-6 text-emerald-600" />}
+                    {(project.id === 'proj-02' || project.name.includes('FinanceFit')) && <HeartPulse className="w-6 h-6 text-rose-600" />}
+                    {(project.id === 'proj-03' || project.name.includes('Voyage')) && <Compass className="w-6 h-6 text-amber-600" />}
+                    {(project.id === 'proj-04' || project.name.includes('Recruit')) && <UserCheck className="w-6 h-6 text-cyan-600" />}
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 font-['Hanken_Grotesk'] group-hover:text-sky-700 transition-colors">
