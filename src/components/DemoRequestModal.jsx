@@ -35,12 +35,40 @@ export default function DemoRequestModal({ isOpen, onClose }) {
         </button>
 
         {submitted ? (
-          <div className="py-12 text-center space-y-4">
+          <div className="py-8 text-center space-y-6">
             <CheckCircle2 className="w-16 h-16 text-emerald-600 mx-auto animate-bounce" />
-            <h3 className="text-2xl font-bold text-slate-900 font-['Hanken_Grotesk']">Demo Scheduled!</h3>
-            <p className="text-sm text-slate-600">
-              Thank you, {formData.name}. Ranjeet & the Nexora engineering team will confirm your calendar invite shortly.
-            </p>
+            <div className="space-y-2">
+              <h3 className="text-2xl font-bold text-slate-900 font-['Hanken_Grotesk']">Executive Demo Scheduled!</h3>
+              <p className="text-xs text-slate-600 max-w-sm mx-auto">
+                Thank you, <strong className="text-slate-900">{formData.name}</strong>. Ranjeet Kumar & the Nexora engineering team will confirm your calendar invite for <span className="font-mono text-sky-700 font-bold">{formData.preferredDate || 'your preferred date'}</span>.
+              </p>
+            </div>
+
+            {/* End-to-End System Onboarding Workflow */}
+            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-left space-y-3">
+              <div className="text-[11px] font-mono font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-sky-600" />
+                End-to-End Demo Preparation Pipeline
+              </div>
+              <div className="grid grid-cols-2 gap-2 text-[10px] font-mono">
+                <div className="p-2 rounded-lg bg-white border border-slate-200">
+                  <span className="text-sky-600 font-bold">1. Data Connector</span>
+                  <p className="text-slate-500 text-[9px]">ERP Ledger Ingestion</p>
+                </div>
+                <div className="p-2 rounded-lg bg-white border border-slate-200">
+                  <span className="text-indigo-600 font-bold">2. Model Build</span>
+                  <p className="text-slate-500 text-[9px]">Neural RAG Tuning</p>
+                </div>
+                <div className="p-2 rounded-lg bg-white border border-slate-200">
+                  <span className="text-emerald-600 font-bold">3. Voice AI System</span>
+                  <p className="text-slate-500 text-[9px]">Speech API Audit</p>
+                </div>
+                <div className="p-2 rounded-lg bg-white border border-slate-200">
+                  <span className="text-purple-600 font-bold">4. Executive Deck</span>
+                  <p className="text-slate-500 text-[9px]">Board Briefing Pack</p>
+                </div>
+              </div>
+            </div>
           </div>
         ) : (
           <div className="space-y-6">
